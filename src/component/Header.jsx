@@ -5,20 +5,28 @@ const Header = () => {
     <header
       className="navbar navbar-expand-lg navbar-custom navbar-grey bg-grey"
       style={{
-        background: "grey", // Grey to luxurious gold gradient
-        margin: "0 25px",
-        borderRadius: "20px",
+        background: "grey",
+        border: "solid 1px white",
         color: "gold", // Set the text color to gold
         padding: "10px", // Add some padding for readability
       }}
     >
-      <div className="container d-flex justify-content-between">
+      <div
+        className=""
+        style={{
+          width: "100%",
+          border: "solid 1px white",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <a className="navbar-brand" href="#">
           <img
-            src="/src/assets/actual-logo.png" // Replace with your actual logo path
+            src="./src/assets/img/actual-logo.png" // Replace with your actual logo path
             alt="Logo"
-            width="50"
+            width="45"
             height="40"
+            borderRadius="15px"
             className="d-inline-block align-top ml-5"
           />
           <strong style={{ marginLeft: "20px" }}>Shika Flux</strong>

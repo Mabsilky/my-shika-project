@@ -5,8 +5,7 @@ import Currency from "./component/Currency";
 import Footer from "./component/Footer";
 import "./App.css";
 
-const BASE_URL = "http://api.currencylayer.com/live";
-const ACCESS_KEY = "1483df00246df51b16ed1d40eb341e25"; 
+const BASE_URL = "https://api.exchangerate-api.com/v4/latest";
 
 function App() {
   const [currencyOptions, setCurrencyOptions] = useState([]);
@@ -17,7 +16,7 @@ function App() {
   const [amountInFromCurrency, setAmountInFromCurrency] = useState(true);
 
   useEffect(() => {
-    fetch(`${BASE_URL}?access_key=${ACCESS_KEY}`)
+    fetch(`${BASE_URL}/USD`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -25,11 +24,11 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        const firstCurrency = Object.keys(data.quotes)[0];
+        const firstCurrency = Object.keys(data.rates)[0];
         setCurrencyOptions([data.base, ...Object.keys(data.rates)]);
         setFromCurrency(data.base);
         setToCurrency(firstCurrency);
-        setExchangeRate(data.quotes[firstCurrency]);
+        setExchangeRate(data.rates[firstCurrency]);
       })
       .catch((error) => {
         if (error.name === "TypeError") {
@@ -44,9 +43,7 @@ function App() {
 
   useEffect(() => {
     if (fromCurrency != null && toCurrency != null) {
-      fetch(
-        `${BASE_URL}?base=${fromCurrency}&symbols=${toCurrency}&access_key=${ACCESS_KEY}`
-      )
+      fetch(`${BASE_URL}/${fromCurrency}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -91,8 +88,7 @@ function App() {
   return (
     <div>
       <Header />
-
-      <div>
+      <div className="currency">
         <h1 className="con">Convert</h1>
         <Currency
           currencyOptions={currencyOptions}
@@ -110,7 +106,6 @@ function App() {
           amount={toAmount}
         />
       </div>
-      
       <Footer />
     </div>
   );

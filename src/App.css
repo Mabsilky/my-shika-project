@@ -26,3 +26,11 @@ select{
     font-weight: bold;
     font-size: 2rem;
 }
+
+.currency{
+    height: 75vh;
+    background-image: url("./assets/img/page-background.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
