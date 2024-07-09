@@ -1,36 +1,62 @@
-.body{
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center;
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(https://www.shutterstock.com/image-vector/business-candle-stick-graph-chart-600nw-2169971673.jpg);
 }
 
-.con{
-    margin: 0;
-    margin-bottom: 0.5em; 
+.con {
+  display: flex;
+  /* border: 1px solid #333; */
+  justify-content: center;
+  margin: 20px;
+
 }
 
-.input{
-    border: 1px solid #333;
-    border-radius: .3rem;
-    padding: .25em;
-    width: 7em;
+input {
+  border: 1px solid #333;
+  border-radius: 0.3rem;
+  padding: 10px;
+  width: 12em;
+  margin: 5px;
 }
-select{
-    margin-left: .5rem;
-}
-
-.equals{
-    font-weight: bold;
-    font-size: 2rem;
+select {
+  margin-left: 0.5rem;
+  padding: 9px;
+  border-radius: 0.5rem;
 }
 
-.currency{
-    height: 75vh;
-    background-image: url("./assets/img/page-background.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.currency-form {
+  height: 100vh;
+}
+
+.navbar {
+  position: relative;
+  border-radius: 0.5rem;
+  padding: 18px;
+  margin-block-end: 30px;
+  font-size: 22px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.navbar-brand {
+  font-size: 36px;
+  text-shadow: 0.6em;
+}
+
+.welcome {
+  /* border: 1px solid #333; */
+  align-content: justify;
+  text-align: center;
+}
+
+.currency {
+   border-radius: 0.7rem;
+   padding-bottom: 10px;
+}
+ 
+.imageswiper {
+  text-align: center;
+  box-shadow:2px rgb(69, 97, 33) #333;
 }
