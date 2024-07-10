@@ -10,7 +10,7 @@ const Header = () => {
       >
         <div>
           <img
-            src="../assets/img/actual-logo.png"
+            src="./src/assets/actual-logo.png"
             alt="logo"
             className="img-fluid rounded-circle mx-3"
             width="80px"
